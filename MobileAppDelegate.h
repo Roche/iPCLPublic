@@ -126,10 +126,8 @@ enum LoginControllerDisplayMode {
 //- (void) showLoginView:(NSString *) prompt;
 - (void)showLoginViewModallyWithMessage:(NSString *)message animated:(BOOL)animated;
 - (void)showOrUpdateLoginViewWithMessage:(NSString *)message;
-- (void) hideLoginView;
-- (void) showLaunchingView;
-- (void) hideLaunchingView;
-- (void) login:(id) sender;
+- (void)hideLoginView;
+- (void)login:(id) sender;
 
 - (void)readPreference;
 - (void) writePreference;
@@ -148,6 +146,7 @@ enum LoginControllerDisplayMode {
 - (void) handleReachAbilityChangeAfterLoginError;
 - (void) loginDataReturned:(LoginStateValue) loginState appStatus:(AppStatus *) appStatus loginError:(NSString *) loginError;
 - (void) performLoginSequence;
+- (BOOL) shouldUseDefaultExceptionHandler;
 
 /*
  This fundtion performs the actual logout, including presenting loginViewController
@@ -158,6 +157,7 @@ enum LoginControllerDisplayMode {
  // custom UI or model updates after logout
  }
 */
+
 - (void)logoutAndShowLoginView;
 
 
