@@ -129,9 +129,6 @@ enum LoginControllerDisplayMode {
 - (void)hideLoginView;
 - (void)login:(id) sender;
 
-- (void)readPreference;
-- (void) writePreference;
-- (void) writeSecurity:(NSString *) unixId password:(NSString *) password;
 
 - (void) continueAppSetup;
 

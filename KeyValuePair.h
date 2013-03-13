@@ -1,9 +1,5 @@
 //
 //  KeyValuePair.h
-//  On the Road
-//
-//  Created by Greg Martin on 10/4/09.
-//  Copyright 2009 Slalom Consulting. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

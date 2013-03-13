@@ -1,9 +1,5 @@
 //
 //  NSNumber+GenenUtilsh
-//  On the Road
-//
-//  Created by Greg Martin on 10/26/09.
-//  Copyright 2009 Slalom Consulting. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

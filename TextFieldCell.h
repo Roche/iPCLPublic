@@ -1,9 +1,5 @@
 //
 //  TextFieldCell.h
-//  On the Road
-//
-//  Created by Greg Martin on 10/28/09.
-//  Copyright 2009 Slalom Consulting. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
