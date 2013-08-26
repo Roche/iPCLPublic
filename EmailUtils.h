@@ -13,5 +13,5 @@
 @interface EmailUtils : NSObject {
 
 }
-+ (void) sendEmail:(NSString *) toEmail callBack:(UIViewController <MFMailComposeViewControllerDelegate> *) requester;
++ (void) sendEmail:(NSString *) toEmail  withSubject:(NSString *)subject  callBack:(UIViewController <MFMailComposeViewControllerDelegate> *) requester;
 @end

@@ -11,6 +11,7 @@
 #import "UncaughtExceptionHandlerDelegate.h"
 #import "LaunchViewProtocol.h"
 #import "LoginViewProtocol.h"
+#import "MobileLaunchViewController.h"
 #import "ADMS_Measurement.h"
 
 @class LogInViewController;
@@ -128,13 +129,12 @@ enum LoginControllerDisplayMode {
 - (void)showOrUpdateLoginViewWithMessage:(NSString *)message;
 - (void)hideLoginView;
 - (void)login:(id) sender;
-
+- (BOOL)isLaunchingViewShown;
 
 - (void) continueAppSetup;
 
 - (void) invalidateLoginAndSave;
 - (void) performSynchronousCheckOfContentServer;
-- (BOOL) isTimeToNag:(AppStatus *)appStatus;
 - (void) passControlToLaunchControllerToPromptForUpgrade: (AppStatus *) appStatus;
 - (BOOL) checkSavedAppStatusForUpgrade;
 - (void) continueAfterUpgradePrompt;
@@ -146,7 +146,7 @@ enum LoginControllerDisplayMode {
 - (BOOL) shouldUseDefaultExceptionHandler;
 
 /*
- This fundtion performs the actual logout, including presenting loginViewController
+ This function performs the actual logout, including presenting loginViewController
  
  To use this, user needs to do:
  - (void)applicationDidRequestLogout {
@@ -155,6 +155,10 @@ enum LoginControllerDisplayMode {
  }
 */
 
+/*
+  When calling this method, make sure that either you're calling it as a response to a button tapped by the user or 
+  if you're doing it from some other code, that your view controller's stack is initialized. 
+ */
 - (void)logoutAndShowLoginView;
 
 
@@ -172,7 +176,8 @@ enum LoginControllerDisplayMode {
 
 - (void) applicationWillEnterForeground:(UIApplication *)application;
 
-- (UIViewController<LaunchViewProtocol> *)applicationsLaunchingViewController;
+
+- (MobileLaunchViewController<LaunchViewProtocol> *)applicationsLaunchingViewController;
 - (UIViewController<LoginViewProtocol> *)applicationsLoginViewController;
 
 @end

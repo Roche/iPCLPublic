@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SalesForceSSOLogin : NSObject <NSURLConnectionDataDelegate, NSXMLParserDelegate>
+// for information purposes only so that you know what it is. Changes here will not affect anything - it's a macro. 
+#define SALESFORCE_HOST_PATTERN @"(?<=https://)(.*?)(?=.salesforce.com)"
+
+@protocol SalesForceSSOLoginParserDelegate <NSObject>
+-(NSRegularExpression *)regexpForHostParsing;
+@end
+
+
+@interface SalesForceSSOLogin : NSObject <NSURLConnectionDataDelegate, NSXMLParserDelegate, SalesForceSSOLoginParserDelegate>
 
 + (id)loginWithUsername:(NSString *)aUsername password:(NSString *)aPassword andComplitionHandler:(void (^)(NSString *aToken, NSString *aSFHost, NSError *error))aComplitionHandler;
 
