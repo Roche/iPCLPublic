@@ -72,7 +72,7 @@ enum LoginControllerDisplayMode {
 @interface MobileAppDelegate : NSObject <LoginRequestDataHandler, UncaughtExceptionHandlerDelegate, MobileLoginSequenceDelegate, LogoutFunctionalityDelegate> {
 	UIWindow					*window;
 
-	MobileLaunchViewController<LaunchViewProtocol> *launchController;
+	UIViewController<LaunchViewProtocol> *launchController;
 	UIViewController<LoginViewProtocol> *loginController;
 
 	enum LoginControllerDisplayMode loginControllerDisplayMode;

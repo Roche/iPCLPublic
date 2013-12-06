@@ -9,12 +9,17 @@
 #import "MessageView.h"
 #import "LaunchViewProtocol.h"
 
-typedef enum {
-  ButtonsVisibilityAll = 0,
-	ButtonsVisibilityOnlyUpdate,
-	ButtonsVisibilityOnlyClose,
-	ButtonsVisibilityNone,
-}ButtonsVisibility;
+
+/*
+  Tags of internal subviews. Buttons, message views etc.  Exposed here
+  so that it is possible to customize them by users of the library.
+*/
+
+#define INDICATOR_TAG 1001
+#define CONTINUE_BUTTON_TAG 1003
+#define UPGRADE_BUTTON_TAG 1002
+#define CLOSE_BUTTON_TAG 1004
+#define MESSAGE_VIEW_TAG 1005
 
 @interface MobileLaunchViewController : UIViewController<LaunchViewProtocol> {
 	MessageView			*messageView;
@@ -26,7 +31,7 @@ typedef enum {
 	ButtonsVisibility currentButtonsVisibility;
 }
 
-- (IBAction)continueClicked:(id) sender;
+- (void)continueClicked:(id) sender;
 - (void)showLoading;
 - (void)showMessage:(NSString *)message buttonsVisibility:(ButtonsVisibility)buttonsVisibility 
 																	  hasInternetConnection:(BOOL)hasInternetConnection;
