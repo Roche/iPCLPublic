@@ -21,4 +21,5 @@ typedef enum {
 - (void)showLoading;
 - (void)showMessage:(NSString *)message buttonsVisibility:(ButtonsVisibility)buttonsVisibility 
 																	  hasInternetConnection:(BOOL)hasInternetConnection;
+- (void) hideMessageView;
 @end

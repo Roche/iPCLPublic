@@ -1,6 +1,8 @@
 //
 //  NSDictionary+GenenUtil.h
 //
+//  Copyright 2009 Genentech. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 

@@ -3,7 +3,7 @@
 //  ICCalc
 //
 //  Created by Krzysztof Cieplucha on 8/13/12.
-//
+//  Copyright 2014 Genetech, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

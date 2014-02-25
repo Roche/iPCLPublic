@@ -1,3 +1,6 @@
+//
+//  Copyright 2014 Genentech. All rights reserved.
+
 #import "NSNumber+GenenUtil.h"
 #import "NSString+GenenUtil.h"
 #import "NSData+GenenUtil.h"

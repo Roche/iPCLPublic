@@ -1,3 +1,6 @@
+//
+//  Copyright 2014 Genentech. All rights reserved.
+
 #import <Foundation/Foundation.h>
 
 #define SEARCH_DELAY 0.5

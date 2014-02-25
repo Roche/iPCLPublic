@@ -1,3 +1,7 @@
+//
+//  UIColor-Expanded.h
+//  Copyright 2009 Genentech. All rights reserved.
+//
 #import <UIKit/UIKit.h>
 
 #define SUPPORTS_UNDOCUMENTED_API	0

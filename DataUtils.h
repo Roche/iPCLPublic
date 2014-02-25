@@ -34,7 +34,6 @@
 + (NSString *) buildAddressLine2:(NSString *) city state:(NSString *) state zip:(NSString *) zip zip4:(NSString *) zip4;
 + (NSString *) buildPhone:(NSString *) phone withExtension:(NSString *) ext;
 + (NSDate *) adjustDate:(NSDate *) sourceDate byInterval:(NSInteger) interval;
-+ (NSString *)formatPhone:(NSString *)phone;
 + (NSString *) doubleToCurrency:(double) value;
 + (double) currencyToDouble:(NSString *) value;
 
