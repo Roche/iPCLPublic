@@ -6,7 +6,6 @@
 #import "NSData+GenenUtil.h"
 #import "NSError+GenenUtil.h"
 #import "NSDictionary+GenenUtil.h"
-#import "UsageTracking.h"
 
 #define OPAQUE_HEXCOLOR(c) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0] 
 #define DEFAULT_TOOLBAR_TINT_COLOR 0xE26F24 //0x533414

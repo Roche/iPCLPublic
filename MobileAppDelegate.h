@@ -12,7 +12,6 @@
 #import "LaunchViewProtocol.h"
 #import "LoginViewProtocol.h"
 #import "MobileLaunchViewController.h"
-#import "ADMS_Measurement.h"
 
 @class LogInViewController;
 @class MobileLaunchViewController;
@@ -81,8 +80,6 @@ enum LoginControllerDisplayMode {
 	BOOL                        connected;	
 	SecurityUtil				*secUtil;				//Security utility for login
 	SecurityUtil				*backgroundSecUtil;		//Security utility for background login (different LoginRequestDataHandler is used)
-	ADMS_Measurement            *tracking;				//Omniture tracking
-    ADMS_Measurement            *appTracking;           //Omniture tracking init or resume of all apps only
 	BOOL                        needUserInfo;			//set to True to get user info during login
     
     AppStatus                   *savedAppStatus;
@@ -107,8 +104,6 @@ enum LoginControllerDisplayMode {
 
 @property (nonatomic) BOOL useStaticData;
 @property (nonatomic) BOOL connected;
-@property (nonatomic, retain) ADMS_Measurement *tracking;
-@property (nonatomic, retain) ADMS_Measurement *appTracking;
 
 @property (nonatomic, retain)   AppStatus           *savedAppStatus;
 @property (nonatomic, retain)   NSString            *versionNumber; 
@@ -121,8 +116,6 @@ enum LoginControllerDisplayMode {
 
 @property (nonatomic, copy)     NSString            *technicalUnixId;
 @property (nonatomic, copy)     NSString            *technicalUnixPassword;
-
-- (void) trackAppEvent:(NSString *) event;
 
 //- (void) showLoginView:(NSString *) prompt;
 - (void)showLoginViewModallyWithMessage:(NSString *)message animated:(BOOL)animated;
@@ -161,8 +154,6 @@ enum LoginControllerDisplayMode {
  */
 - (void)logoutAndShowLoginView;
 
-
-- (void) initOmniture;
 - (void) initSettings;
 - (void) setupApplicationTheme;
 

@@ -9,11 +9,11 @@
 @interface TextFieldCell : UITableViewCell
 {
 	UITextField *_textField;
-	NSInteger _textFieldLeftPos;
+	CGFloat _textFieldLeftPos;
 }
 
 @property (nonatomic, retain, readonly) UITextField *textField;
-@property (nonatomic) NSInteger textFieldLeftPos;
+@property (nonatomic) CGFloat textFieldLeftPos;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 

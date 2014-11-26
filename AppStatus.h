@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-#define APP_PARAMS_KEY @"AppParams"
+#define APP_PARAMS_KEY @"parameters"
 
 @interface AppStatus : NSObject {
 	BOOL            newVersionAvailable;
