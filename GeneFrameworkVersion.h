@@ -6,6 +6,6 @@
 //  Copyright 2011 Genentech Inc. All rights reserved.
 //
 
-#define GNE_FRAMEWORK_VERSION @"30020141126143711"
+#define GNE_FRAMEWORK_VERSION @"30420160412112659"
 
 extern const NSString* GneFrameworkVersion();

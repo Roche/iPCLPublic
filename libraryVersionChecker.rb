@@ -22,17 +22,23 @@ cstring_addresses = symbol_entries.split("\n").select {|e| e.include?('__cstring
 
 p "cstring addresses:\n#{cstring_addresses}"
 
-cstring_address = cstring_addresses.last.split.first
-
-p "using last address: 0x#{cstring_address}"
-
-version_number_entry = %x(otool -s __TEXT __cstring #{lib_name} | grep ^#{cstring_address})
-
-p "record for version number:\n#{version_number_entry}"
-
-version_number = version_number_entry.split.slice(1...-1).map {|n| n.to_i(16) - 0x30 }.join
-
-puts version_number
+unless cstring_addresses.empty?  # old method for
+  p "using old method for extracting library version"
+  cstring_address = cstring_addresses.last.split.first
+  p "using last address: 0x#{cstring_address}"
+  version_number_entry = %x(otool -s __TEXT __cstring #{lib_name} | grep ^#{cstring_address})
+  p "record for version number:\n#{version_number_entry}"
+  version_number = version_number_entry.split.slice(1...-1).map {|n| n.to_i(16) - 0x30 }.join
+  puts version_number
+else
+  p "using new method of extracting library version"
+  cstring_section = %x(otool -v -s __TEXT __cstring  #{lib_name} | grep -i "GeneFrameworkVersion.o" -A 2)
+  p "cstring_section: #{cstring_section}"
+  version_number_entry = cstring_section.split("\n").last
+  p "record for version number:\n#{version_number_entry}"
+  version_number = version_number_entry.split.last
+  puts version_number
+end
 
 
 
