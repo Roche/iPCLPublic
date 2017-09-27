@@ -21,7 +21,7 @@
 #define CLOSE_BUTTON_TAG 1004
 #define MESSAGE_VIEW_TAG 1005
 
-@interface MobileLaunchViewController : UIViewController<LaunchViewProtocol> {
+@interface MobileLaunchViewController : UIViewController<LaunchViewProtocol, CAAnimationDelegate> {
 	MessageView			*messageView;
 	UIView			*loadingView;
 	BOOL _canContinue;
